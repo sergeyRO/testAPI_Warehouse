@@ -8,9 +8,9 @@
 
 2. /api/products - Просмотреть список товаров с их остатками по складам (метод GET)
 
-3. /api/orders - Получить список заказов (с фильтрами и настраиваемой пагинацией) (метод GET)
-   Пример: api/orders?limit=20&status=canceled
-   Пояснение:
+3. /api/orders - Получить список заказов (с фильтрами и настраиваемой пагинацией) (метод GET) 
+   ######Пример: api/orders?limit=20&status=canceled
+   ####Пояснение:
          page - страница
          limit - количество заказов на странице
          status - статус заказа (active,comleted,canceled)
@@ -20,7 +20,7 @@
          warehouse_id - Id-склада
          
 4. /api/orders - создание заказа (метод POST) в Headers(Content-Type:application/json)
-    Пример:
+    ####Пример:
             {   
             "customer":"Иванов И.И.",	
         	"products":[
@@ -38,13 +38,13 @@
         			}
         		]
         		}
-    Пояснение:
+    ####Пояснение:
           customer - покупатель
           product_id - Id-продукта
           count - количество 
           
 5. /api/orders/{id} - изменение заказа (метод PUT) в Headers(Content-Type:application/json), где {id} - Id-заказа
-    Пример:
+    ####Пример:
          {
          	"customer":"Петров И.Ию",
          	"products":[
@@ -66,22 +66,22 @@
          			}
          		]
          		}   
-    Пояснение:
+    ####Пояснение:
         customer - покупатель
         product_id - Id-продукта
         count - количество 
         
 6. /api/orders/{id}/state - изменить статус заказа (метод PATCH) в Headers(Content-Type:application/json), где {id} - Id-заказа 
-    Пример:
+    ####Пример:
          {
          	"status":"active"
          }
-    Пояснение:
+    ####Пояснение:
         status - Статус заказа для изменения (active,completed,canceled)
         
 7. /api/motions - просмотра историй изменения остатков товаров (метод GET)
-    Пример: /api/motions?limit=20&page=2
-    Пояснение:
+    #####Пример: /api/motions?limit=20&page=2
+    ####Пояснение:
             page - страница
             limit - количество заказов на странице
             order_id - Id-заказа
